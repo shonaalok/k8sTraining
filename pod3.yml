@@ -11,3 +11,7 @@ spec:
     ports:
     - name: nodejs-port
       containerPort: 3000
+    resources:
+        limits:
+            memory: "128Mi"
+            cpu: "500m"

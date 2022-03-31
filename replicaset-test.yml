@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata: 
+  name: sample-java-controller
+  labels:
+    app: sample-java
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: sample-java
+  template:
+    metadata:
+      labels:
+        app: sample-java
+    spec:
+      containers:
+      - name: k8s-demo
+        image: sonamvashishth/k8training1:v1.0.0
+        ports:
+        - name: java-port
+          containerPort: 8080
